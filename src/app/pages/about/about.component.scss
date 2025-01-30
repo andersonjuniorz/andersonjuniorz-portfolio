@@ -1,0 +1,15 @@
+h1{ text-align: center; }
+
+p{ text-align: justify; }
+
+.about-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.about-text-content{
+    width: 70%;
+    justify-content: center;
+}
+.contactLink{ border-radius: 50%; }
