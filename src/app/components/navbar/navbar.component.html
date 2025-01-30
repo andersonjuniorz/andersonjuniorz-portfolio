@@ -1,0 +1,19 @@
+<nav>
+    <mat-toolbar class="mat-elevation-z6">
+        <a class="logo" routerLink="/"> <mat-icon>eco</mat-icon> Andersonjuniorz</a>
+
+        <div class="spacer"></div>
+
+        <a mat-button color="color-light-text" routerLink="/">Home</a>
+        <a mat-button routerLink="/about">Sobre</a>
+
+        <button mat-button [matMenuTriggerFor]="serviceMenu">Serviços</button>
+        <mat-menu #serviceMenu="matMenu">
+            <button mat-menu-item routerLink="/services/web">Serviço Web</button>
+            <button mat-menu-item routerLink="/services/games">Serviço de Games</button>
+            <button mat-menu-item routerLink="/services/3d">Serviço 3D</button>
+        </mat-menu>
+        
+        <button class="contactLink">Contato</button>
+    </mat-toolbar>
+</nav>

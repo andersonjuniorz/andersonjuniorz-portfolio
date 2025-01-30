@@ -1,0 +1,44 @@
+nav{
+    position: fixed;
+    top: 0;
+    width: 98%;
+    z-index: 1000;
+    padding: 10px;
+}
+
+mat-toolbar a, mat-toolbar button {
+    color: var(--color-light-text);
+}
+
+mat-toolbar a:hover, mat-toolbar button:hover {
+    color: #727272;
+}
+
+mat-menu button:hover {
+    background-color: #727272;
+}
+
+.mat-toolbar{
+    background-color: #1c1c1cd2;
+    border-radius: 50px;
+    padding: 35px;
+    color: var(--color-light-text);
+}
+
+.logo{
+    color: var(--color-light-text);
+    text-decoration: none;
+}
+
+.spacer { /* Espacador que empurra dos itens */
+    flex: 1 1 auto;
+}
+
+.contactLink{
+    cursor: pointer;
+    border-radius: 30px;
+    padding: 10px 20px;
+    background-color: var(--color-third);
+    border: 2px solid transparent;
+    margin-left: 20px;
+}
