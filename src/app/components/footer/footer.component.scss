@@ -1,0 +1,102 @@
+footer {
+    background-color: var(--color-dark-text);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: auto;
+    width: 100%;
+    padding: 20px 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+footer .content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ------------------ ICONS ---------------------- */
+
+footer .icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px 0;
+}
+
+footer .icons svg {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+}
+
+footer .icons mat-icon:hover {
+    transform: scale(1.1);
+}
+
+/* ------------------ NAV MENU FOOTER ---------------------- */
+footer .menu {
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+}
+
+footer .menu ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+}
+
+footer .menu ul li {
+    margin: 0;
+}
+
+footer .menu ul li a {
+    text-decoration: none;
+}
+
+footer .menu button,
+footer .menu ul li a{
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+footer .menu ul li a:hover {
+    color: var(--color-Background);
+}
+
+/* ------------------ COPYRIGHT ---------------------- */
+
+footer .copyright {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    border-top: 1px solid var(--color-Background);
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+/* ------------------ RESPONSIVIDADE ---------------------- */
+
+@media (max-width: 768px) {
+    footer .menu ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer .icons {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+}
