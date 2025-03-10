@@ -18,7 +18,7 @@ html {
 
 /* ------------ GLOBAL ------------ */
 
-:root{ /* Var And Colors */
+:root{ /* Vars And Colors */
     --color-primary: #0000FF;
     --color-second: #00FFFF;
     --color-third: #65558F;
@@ -28,15 +28,18 @@ html {
     --color-Background: #D9D9D9;
 }
 
-html, body { height: 100%; }
+html, body { 
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
 
 body { 
     margin: 0; 
     font-family: Roboto, "Helvetica Neue", sans-serif; 
     background-color: var(--color-Background);
 }
-
-/* -------------------------------- */
 
 /* ------- BARRA DE ROLAGEM ------- */
 
@@ -58,8 +61,6 @@ body {
     background-color: #555;
 }
 
-/* -------------------------------- */
-
 /* ---------- UTILITY ------------- */
 
 .mt-150{ margin-top: 150px; }
@@ -68,6 +69,7 @@ body {
 
 .h-200px{ height: 200px; }
 
-/* -------------------------------- */
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.border-top-right-radius{ border-top-right-radius: 20%; }
+.border-bottom-right-radius{ border-bottom-right-radius: 20%; }
+.border-top-left-radius{ border-top-left-radius: 20%; }
+.border-bottom-left-radius{ border-bottom-left-radius: 20%; }
