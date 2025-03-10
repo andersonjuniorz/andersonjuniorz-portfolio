@@ -1,5 +1,314 @@
-header{
-    background-color: green;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+main {
     width: 100%;
-    height: 550px;
+    background-color: var(--color-dark-text);
+}
+
+/* ------------------ ABOUT ME ---------------------- */
+
+.aboutMe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px 20px;
+    background-color: var(--color-dark-text);
+}
+
+/* Alinhamento de conteudo */
+.aboutMeContent {
+    display: flex;
+    flex-direction: row; /* Alinha a foto e o conteudo de texto na mesma linha */
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    margin: 0 auto;
+    border-radius: 8px;
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    align-items: center; /* Centraliza os itens verticalmente */
+}
+
+/* Alinhamento da foto do perfil */
+.profile-photo {
+    width: 200px;
+    height: 300px;
+    border-radius: 8px;
+    margin-right: 30px; /* Espacamento entre a foto e o texto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Garantir que a imagem dentro da foto de perfil ocupe todo o espaco */
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garantir que a imagem ocupe o espaco */
+    border-radius: 8px;
+}
+
+/* Estilo do conteudo de texto */
+.text-content {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* Titulo do conteudo */
+.text-content h2 {
+    color: var(--color-light-text);
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.text-content p {
+    color: var(--color-light-text);
+    text-align: justify;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Agrupamento dos botoes de idiomas na mesma linha */
+.text-content .btn-languages-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Estilo dos botoes de idiomas */
+.btn-languages, .btn-ways{
+    color: var(--color-light-text);
+    width: auto;
+    min-width: 120px;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.btn-languages{
+    background-color: #575757;
+    border-radius: 50px;
+
+}
+.btn-languages:hover {
+    background-color: var(--color-primary);
+}
+
+/* Secao de icones de ferramentas */
+.Icons-Tools {
+    background-color: #313131;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px; /* Limita a largura max para evitar que os icones ultrapassem a tela */
+    width: 100%;
+    padding: 20px;
+    margin: 20px auto; /* Centraliza os icones e adiciona espacamento */
+    gap: 70px;
+    border-radius: 10px;
+    justify-content: center; /* Centraliza os icones horizontalmente */
+}
+
+.Icons-Tools svg{
+    width: 50px;
+    height: 50px;
+}
+
+/* Secao de tags */
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.buttons .btn-ways {
+    width: 150px; /* Tamanho maior para as tags */
+}
+
+.buttons-ways{
+    text-align: center;
+    width: 50%;
+}
+.btn-ways{
+    background-color: #3d3d3d;
+    border-radius: 5px;
+}
+
+/* ------------------ RECENTLY WORKS ---------------------- */
+
+.recentlyWorks{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30px;
+}
+
+.recentlyWorks-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0px;
+    gap: 50px;
+}
+
+.recentlyWorks-header h2{
+    color: var(--color-light-text);
+}
+
+
+
+.recentlyWorks .content{
+    background-color: var( --color-primary);
+    padding: 30px;
+}
+
+.recentlyWorks .content section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.recentlyWorks .content section h2{
+    color: var(--color-light-text);
+    padding: 30px 0;
+    font-size: 2em;
+}
+
+.recentlyWorks .content section iframe{
+    width: 70%;
+    height: 400px;
+    display: block;
+    margin: 0 auto; 
+}
+
+.recentlyWorks .content section p{
+    text-align: justify;
+    width: 70%;
+    font-size: 1.24rem;
+    line-height: 1.5rem;
+    padding: 30px 0;
+    margin: auto;
+}
+
+.big-dots{
+    width: 150px;
+    height: 150px;
+}
+
+/* ------------------ QUOTE ---------------------- */
+
+.quote{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+
+    /* Img parallax */
+    background-image: url('/building.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.quote-content{
+    background-color: #ff2a2ae0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 250px;
+    border-radius: 30px;
+}
+
+.quote-content p {
+    padding: 40px;
+    font-size: 2rem;
+    line-height: 30px;
+}
+.quote-content .author{
+    padding: 0 10px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+/* ------------------ CONTACT ---------------------- */
+
+.contact {
+    background-color: var(--color-primary);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 400px;
+    padding-top: 20px;
+}
+
+.social-media {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.social-media  svg {
+    width: 120px;
+    height: 170px;
+}
+
+.info {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    font-size: 20px;
+    text-align: right;
+}
+
+.contact h2, p{
+    color: var(--color-light-text);
+}
+
+/* ------------------ RESPONSIVIDADE ---------------------- */
+
+@media (max-width: 768px) {
+    .aboutMeContent {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-photo {
+        margin-bottom: 20px;
+    }
+
+    .text-content {
+        width: 80%;
+    }
+
+    .buttons .btn-ways {
+        width: 120px;
+    }
 }
