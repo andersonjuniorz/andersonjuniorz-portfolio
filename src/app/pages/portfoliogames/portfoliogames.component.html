@@ -7,7 +7,7 @@
 
     <section class="projects">
 
-        <mat-card appearance="outlined">
+        <mat-card *ngFor="let project of projects" (click)="openProjectDetails(project)">
             <img src="header-bg.png" alt="header-example">
 
             <section class="technologies">
@@ -17,86 +17,10 @@
             </section>
 
             <section class="card-content">
-                <mat-card-content>Simple card</mat-card-content>
+                <mat-card-content>{{ project.title }}</mat-card-content>
                 <p>Lorem ipsum dolor si dignissimos modi perspiciatis, illo digniLien eleit the gahe huo ih thue bahye tiit qprie ekee ewweee ssimos modi perspiciatis, illo commod</p>
             </section>
         </mat-card>
 
-        <mat-card appearance="outlined">
-            <img src="header-bg.png" alt="header-example">
-            
-            <section class="technologies">
-                <app-card-button techName="Unity3D" backgroundColor="#b2b2b2" />
-                <app-card-button techName="C#" backgroundColor="#DD0031" />
-                <app-card-button techName="Blender" backgroundColor="#0f0" />
-            </section>
-
-            <section class="card-content">
-                <mat-card-content>Simple card</mat-card-content>
-                <p>Lorem ipsum dolor si dignissimos modi perspiciatis, illo digniLien eleit the gahe huo ih thue bahye tiit qprie ekee ewweee ssimos modi perspiciatis, illo commod</p>
-            </section>
-        </mat-card>
-
-        <mat-card appearance="outlined">
-            <img src="header-bg.png" alt="header-example">
-            
-            <section class="technologies">
-                <app-card-button techName="Unity3D" backgroundColor="#b2b2b2" />
-                <app-card-button techName="C#" backgroundColor="#DD0031" />
-                <app-card-button techName="Blender" backgroundColor="#0f0" />
-            </section>
-
-            <section class="card-content">
-                <mat-card-content>Simple card</mat-card-content>
-                <p>Lorem ipsum dolor si dignissimos modi perspiciatis, illo digniLien eleit the gahe huo ih thue bahye tiit qprie ekee ewweee ssimos modi perspiciatis, illo commod</p>
-            </section>
-        </mat-card>
-        
-        <mat-card appearance="outlined">
-            <img src="header-bg.png" alt="header-example">
-            
-            <section class="technologies">
-                <app-card-button techName="Unity3D" backgroundColor="#b2b2b2" />
-                <app-card-button techName="C#" backgroundColor="#DD0031" />
-                <app-card-button techName="Blender" backgroundColor="#0f0" />
-            </section>
-
-            <section class="card-content">
-                <mat-card-content>Simple card</mat-card-content>
-                <p>Lorem ipsum dolor si dignissimos modi perspiciatis, illo digniLien eleit the gahe huo ih thue bahye tiit qprie ekee ewweee ssimos modi perspiciatis, illo commod</p>
-            </section>
-        </mat-card>
-
-        <mat-card appearance="outlined">
-            <img src="header-bg.png" alt="header-example">
-            
-            <section class="technologies">
-                <app-card-button techName="Unity3D" backgroundColor="#b2b2b2" />
-                <app-card-button techName="C#" backgroundColor="#DD0031" />
-                <app-card-button techName="Blender" backgroundColor="#0f0" />
-            </section>
-
-            <section class="card-content">
-                <mat-card-content>Simple card</mat-card-content>
-                <p>Lorem ipsum dolor si dignissimos modi perspiciatis, illo digniLien eleit the gahe huo ih thue bahye tiit qprie ekee ewweee ssimos modi perspiciatis, illo commod</p>
-            </section>
-        </mat-card>
-
-        <mat-card appearance="outlined">
-            <img src="header-bg.png" alt="header-example">
-            
-            <section class="technologies">
-                <app-card-button techName="Unity3D" backgroundColor="#b2b2b2" />
-                <app-card-button techName="C#" backgroundColor="#DD0031" />
-                <app-card-button techName="Blender" backgroundColor="#0f0" />
-            </section>
-
-            <section class="card-content">
-                <mat-card-content>Simple card</mat-card-content>
-                <p>Lorem ipsum dolor si dignissimos modi perspiciatis, illo digniLien eleit the gahe huo ih thue bahye tiit qprie ekee ewweee ssimos modi perspiciatis, illo commod</p>
-            </section>
-        </mat-card>
-    </section>
-
-    
+    </section>    
 </main>
