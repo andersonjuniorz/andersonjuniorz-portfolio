@@ -38,6 +38,34 @@ export class NavbarComponent {
     }
   }
 
+  GoToHome() {
+    this.goToSection('header'); // Chama goToSection passando 'header' como ID
+  }
+
+  
+  goToSection(sectionId: string) {
+    if (isPlatformBrowser(this.platformId)) { 
+      if (this.router.url === '/') {
+        setTimeout(() => {
+          const section = this.document.getElementById(sectionId);
+          if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      } else {
+        this.router.navigate(['/']).then(() => {
+          setTimeout(() => {
+            const section = this.document.getElementById(sectionId);
+            if (section) {
+              section.scrollIntoView({ behavior: 'smooth' });
+            }
+          }, 300);
+        });
+      }
+    }
+  }
+  
+
   goToContact() {
     
     if (isPlatformBrowser(this.platformId)) { // Garante que so rode no navegador
