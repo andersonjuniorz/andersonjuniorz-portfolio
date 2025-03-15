@@ -11,13 +11,13 @@ h1{
 
 /* ------------------ PROJECT CONTAINER ---------------------- */
 
-.projects{
+.projects {
     background-color: #2c2c2c;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Mantém os cards centralizados na horizontal */
+    align-items: flex-start; /* Alinha os cards no topo verticalmente */
     width: 100%;
     height: auto;
     padding: 10px;
