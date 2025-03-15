@@ -1,5 +1,5 @@
 button {
-    color: white;
+    color: var(--color-light-text);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -7,6 +7,6 @@ button {
     padding: 5px 10px;
     border: none;
     border-radius: 5px;
-    cursor: default;
+    cursor: pointer;
     margin: 5px;
 }

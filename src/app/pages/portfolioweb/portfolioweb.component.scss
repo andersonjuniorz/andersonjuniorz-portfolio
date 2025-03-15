@@ -2,22 +2,28 @@ h1{
     margin-bottom: 30px;
 }
 
+.portfolio-next-title{
+    padding: 50px;
+    padding-bottom:10px;
+}
+
 .description{
     padding: 10px 40px;
     font-weight: lighter;
     font-style: italic;
     font-size: 0.9rem;
+    margin-bottom: 25px;
 }
 
 /* ------------------ PROJECT CONTAINER ---------------------- */
 
-.projects{
+.projects {
     background-color: #2c2c2c;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Mantem os cards centralizados na horizontal */
+    align-items: flex-start; /* Alinha os cards no topo verticalmente */
     width: 100%;
     height: auto;
     padding: 10px;

@@ -1,36 +1,48 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { CardButtonComponent } from '../../components/card-button/card-button.component';
-import { CommonModule } from '@angular/common';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { ProjectDialogComponent } from '../../components/project-dialog/project-dialog.component';
+import { TruncatePipe } from '../../Pipe/truncatePipe';
+import { ProjectDialogComponent } from '../../components/project-dialog/project-dialog.component'; //Pop up
+import { CardItem } from '../../interfaces/cardItem.interface';
+import { WebProjects } from '../../../shared/webProjects';
+import { SoftwareProjects } from '../../../shared/softwares';
+import { Technology } from '../../interfaces/technology.interface';
+import { technologies } from '../../../shared/ technologies';
+import { TechButtonComponent } from '../../components/tech-button/tech-button.component';
+
+
 
 @Component({
   selector: 'app-portfolioweb',
-  imports: [CommonModule, MatCardModule, MatDialogModule, CardButtonComponent],
+  imports: [
+    CommonModule, 
+    MatCardModule, 
+    MatDialogModule, 
+    TechButtonComponent,
+    TruncatePipe,
+    TechButtonComponent
+  ],
   templateUrl: './portfolioweb.component.html',
   styleUrl: './portfolioweb.component.scss'
 })
+
+
 export class PortfoliowebComponent {
 
-  projects = [
-    { title: 'Projeto Ecoturismo', description: 'Descrição do projeto 1', image: 'header-bg.png', text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur minus magni ab possimus, velit rerum ullam numquam corporis ipsam dolores, tenetLorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur minus magni ab possimus, velit rerum ullam numquam corporis ipsam dolores, tenetur eaque obcaecati iusto tempora. Iste, esse voluptate. Unde, distinctio?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur minus magni ab possimus, velit rerum ullam numquam corporis ipsam dolores, tenetur eaque obcaecati iusto tempora. Iste, esse voluptate. Unde, distinctio?ur eaque obcaecati iusto tempora. Iste, esse voluptate. Unde, distinctio?' },
-    // { title: 'Projeto 2', description: 'Descrição do projeto 2', image: 'header-bg.png', text: 'LoreLorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur minus magni ab possimus, velit rerum ullam numquam corporis ipsam dolores, tenetur eaque obcaecati iusto tempora. Iste, esse voluptate. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur minus magni ab possimus, velit rerum ullam numquam corporis ipsam dolores, tenetur eaque obcaecati iusto tempora. Iste, esse voluptate. Unde, distinctio? , distinctio?m ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur minus magni ab possimus, velit rerum ullam numquam corporis ipsam dolores, tenetur eaque obcaecati iusto tempora. Iste, esse voluptate. Unde, distinctio?' },
-    // { title: 'Projeto 1', description: 'Descrição do projeto 1', image: 'header-bg.png', text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur minus magni ab possimus, velit rerum ullam numquam corporis ipsam dolores, tenetLorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur minus magni ab possimus, velit rerum ullam numquam corporis ipsam dolores, tenetur eaque obcaecati iusto tempora. Iste, esse voluptate. Unde, distinctio?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur minus magni ab possimus, velit rerum ullam numquam corporis ipsam dolores, tenetur eaque obcaecati iusto tempora. Iste, esse voluptate. Unde, distinctio?ur eaque obcaecati iusto tempora. Iste, esse voluptate. Unde, distinctio?' },
-    // { title: 'Projeto 2', description: 'Descrição do projeto 2', image: 'header-bg.png', text: 'LoreLorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur minus magni ab possimus, velit rerum ullam numquam corporis ipsam dolores, tenetur eaque obcaecati iusto tempora. Iste, esse voluptate. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur minus magni ab possimus, velit rerum ullam numquam corporis ipsam dolores, tenetur eaque obcaecati iusto tempora. Iste, esse voluptate. Unde, distinctio? , distinctio?m ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur minus magni ab possimus, velit rerum ullam numquam corporis ipsam dolores, tenetur eaque obcaecati iusto tempora. Iste, esse voluptate. Unde, distinctio?' },
-    
-    { title: 'Sabor & Arte', description: 'Descrição do projeto 2', image: 'header-bg.png', text: 'LoreLorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur minus magni ab possimus, velit rerum ullam numquam corporis ipsam dolores, tenetur eaque obcaecati iusto tempora. Iste, esse voluptate. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur minus magni ab possimus, velit rerum ullam numquam corporis ipsam dolores, tenetur eaque obcaecati iusto tempora. Iste, esse voluptate. Unde, distinctio? , distinctio?m ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur minus magni ab possimus, velit rerum ullam numquam corporis ipsam dolores, tenetur eaque obcaecati iusto tempora. Iste, esse voluptate. Unde, distinctio?' },
-    { title: 'Website de E-books', description: 'Descrição do projeto 1', image: 'header-bg.png', text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur minus magni ab possimus, velit rerum ullam numquam corporis ipsam dolores, tenetLorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur minus magni ab possimus, velit rerum ullam numquam corporis ipsam dolores, tenetur eaque obcaecati iusto tempora. Iste, esse voluptate. Unde, distinctio?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur minus magni ab possimus, velit rerum ullam numquam corporis ipsam dolores, tenetur eaque obcaecati iusto tempora. Iste, esse voluptate. Unde, distinctio?ur eaque obcaecati iusto tempora. Iste, esse voluptate. Unde, distinctio?' },
-    { title: 'Alfakids', description: 'Descrição do projeto 2', image: 'header-bg.png', text: 'LoreLorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur minus magni ab possimus, velit rerum ullam numquam corporis ipsam dolores, tenetur eaque obcaecati iusto tempora. Iste, esse voluptate. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur minus magni ab possimus, velit rerum ullam numquam corporis ipsam dolores, tenetur eaque obcaecati iusto tempora. Iste, esse voluptate. Unde, distinctio? , distinctio?m ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur minus magni ab possimus, velit rerum ullam numquam corporis ipsam dolores, tenetur eaque obcaecati iusto tempora. Iste, esse voluptate. Unde, distinctio?' },
-    { title: 'E-commerce Macc Bolsas', description: 'Descrição do projeto 1', image: 'header-bg.png', text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur minus magni ab possimus, velit rerum ullam numquam corporis ipsam dolores, tenetLorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur minus magni ab possimus, velit rerum ullam numquam corporis ipsam dolores, tenetur eaque obcaecati iusto tempora. Iste, esse voluptate. Unde, distinctio?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur minus magni ab possimus, velit rerum ullam numquam corporis ipsam dolores, tenetur eaque obcaecati iusto tempora. Iste, esse voluptate. Unde, distinctio?ur eaque obcaecati iusto tempora. Iste, esse voluptate. Unde, distinctio?' },
-  ];
+  technologies = technologies; //Obtendo Dicionario de tecnologias
 
-  softwares = [
-    { title: 'Sistema de Gestão (Meu TCC)', description: 'Descrição do projeto 1', image: 'header-bg.png', text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur minus magni ab possimus, velit rerum ullam numquam corporis ipsam dolores, tenetLorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur minus magni ab possimus, velit rerum ullam numquam corporis ipsam dolores, tenetur eaque obcaecati iusto tempora. Iste, esse voluptate. Unde, distinctio?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur minus magni ab possimus, velit rerum ullam numquam corporis ipsam dolores, tenetur eaque obcaecati iusto tempora. Iste, esse voluptate. Unde, distinctio?ur eaque obcaecati iusto tempora. Iste, esse voluptate. Unde, distinctio?' },
-    { title: 'SimpleTasks', description: 'Descrição do projeto 1', image: 'header-bg.png', text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur minus magni ab possimus, velit rerum ullam numquam corporis ipsam dolores, tenetLorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur minus magni ab possimus, velit rerum ullam numquam corporis ipsam dolores, tenetur eaque obcaecati iusto tempora. Iste, esse voluptate. Unde, distinctio?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur minus magni ab possimus, velit rerum ullam numquam corporis ipsam dolores, tenetur eaque obcaecati iusto tempora. Iste, esse voluptate. Unde, distinctio?ur eaque obcaecati iusto tempora. Iste, esse voluptate. Unde, distinctio?' },
-  ];
+  /* ---------------- ARRAY DE PROJETOS --------------- */
+
+  projects: CardItem[] = WebProjects;
+  softwares: CardItem[] = SoftwareProjects;
+
+
+  /* ------------- CONSTRUCTOR, POP UP CARD --------------- */ 
 
   constructor(private dialog: MatDialog) {}
+
 
   openProjectDetails(project: any) {
     this.dialog.open(ProjectDialogComponent, {
@@ -41,4 +53,5 @@ export class PortfoliowebComponent {
       data: project,     // Passando os dados do projeto para o modal
     });
   }
+
 }
