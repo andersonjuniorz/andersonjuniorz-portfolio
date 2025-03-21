@@ -28,9 +28,10 @@ html {
     --color-Background: #D9D9D9;
 }
 
-html, body { 
+html, body {
   height: 100%;
   margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
 }
@@ -39,6 +40,16 @@ body {
     margin: 0; 
     font-family: Roboto, "Helvetica Neue", sans-serif; 
     background-color: var(--color-Background);
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+router-outlet {
+  flex-grow: 1; /* Ocupa o espaço disponível, empurrando o footer para baixo */
 }
 
 /* ------- BARRA DE ROLAGEM ------- */
@@ -61,14 +72,17 @@ body {
     background-color: #555;
 }
 
+
 /* ---------- UTILITY ------------- */
 
 .mt-150{ margin-top: 150px; }
 
 .text-center{ text-align: center; }
 
+// Heights
 .h-200px{ height: 200px; }
 
+// Border Radius sides
 .border-top-right-radius{ border-top-right-radius: 20%; }
 .border-bottom-right-radius{ border-bottom-right-radius: 20%; }
 .border-top-left-radius{ border-top-left-radius: 20%; }
