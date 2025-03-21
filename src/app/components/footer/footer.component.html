@@ -24,13 +24,12 @@
         <section class="menu">
             <ul>
                 <li>
-                    <a mat-button routerLink="/">Home</a>
+                    <a mat-button (click)="goToSection('header')">Home</a>
                 </li>
                 <li>
                     <a mat-button routerLink="/about">Sobre</a>
                 </li>
                 <li>
-                    <!-- <a mat-button routerLink="/">Serviços</a> -->
                     <button mat-button [matMenuTriggerFor]="serviceMenu">Serviços</button>
                     <mat-menu #serviceMenu="matMenu">
                         <button mat-menu-item routerLink="/services/web">Serviço Web</button>
@@ -39,14 +38,14 @@
                     </mat-menu>
                 </li>
                 <li>
-                    <a mat-button (click)="goToContact()">Contato</a>
+                    <a mat-button (click)="goToSection('contact')">Contato</a>
                 </li>
             </ul>
         </section>
  
     
         <section class="copyright">
-            <p>Copyright 2025 - Todos os direitos reservados</p>
+            <p>&copy; 2025 - Todos os direitos reservados | Andersonjuniorz</p>
         </section>
 
     </section>

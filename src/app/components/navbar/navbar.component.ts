@@ -5,8 +5,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
 import { RouterModule } from '@angular/router';
-import { isPlatformBrowser } from '@angular/common';
-import { DOCUMENT } from '@angular/common';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { NavigationService } from '../../Services/navigationService';
 
 @Component({
   selector: 'app-navbar',
@@ -19,82 +19,26 @@ import { DOCUMENT } from '@angular/common';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
+
 export class NavbarComponent {
 
   constructor(
     private router: Router,
-    @Inject(PLATFORM_ID) private platformId: Object, // Injeta o identificador da plataforma
-    @Inject(DOCUMENT) private document: Document // Usa DOCUMENT para manipulação segura do DOM
+    private navigationService: NavigationService,
+    @Inject(PLATFORM_ID) private platformId: Object,
+    @Inject(DOCUMENT) private document: Document
   ) {}
 
-
   ngOnInit(): void {
-    if (isPlatformBrowser(this.platformId)) { // Verifica se esta no navegador
+    // Logica para rolar a pagina para o topo apos a navegacao
+    if (isPlatformBrowser(this.platformId)) {
       this.router.events.pipe(
         filter(event => event instanceof NavigationEnd)
-      ).subscribe(() => {
-        window.scrollTo(0, 0);
-      });
+      ).subscribe(() => window.scrollTo(0, 0));
     }
   }
 
-  GoToHome() {
-    this.goToSection('header'); // Chama goToSection passando 'header' como ID
-  }
-
-  
   goToSection(sectionId: string) {
-    if (isPlatformBrowser(this.platformId)) { 
-      if (this.router.url === '/') {
-        setTimeout(() => {
-          const section = this.document.getElementById(sectionId);
-          if (section) {
-            section.scrollIntoView({ behavior: 'smooth' });
-          }
-        }, 100);
-      } else {
-        this.router.navigate(['/']).then(() => {
-          setTimeout(() => {
-            const section = this.document.getElementById(sectionId);
-            if (section) {
-              section.scrollIntoView({ behavior: 'smooth' });
-            }
-          }, 300);
-        });
-      }
-    }
+    this.navigationService.goToSection(sectionId);
   }
-  
-
-  goToContact() {
-    
-    if (isPlatformBrowser(this.platformId)) { // Garante que so rode no navegador
-      
-      if (this.router.url === '/') {
-      
-        const contactSection = this.document.getElementById('contact');
-
-        if (contactSection) {
-          contactSection.scrollIntoView({ behavior: 'smooth' });
-        }
-
-      } else {
-        
-        this.router.navigate(['/']).then(() => {
-         
-          setTimeout(() => {
-            const contactSection = this.document.getElementById('contact');
-
-            if (contactSection) {
-              contactSection.scrollIntoView({ behavior: 'smooth' });
-            }
-
-          }, 300);
-
-        });
-        
-      }
-    }
-  }
-
 }

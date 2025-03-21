@@ -1,14 +1,14 @@
 footer {
     background-color: var(--color-dark-text);
-    color: white;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    height: auto;
     width: 100%;
+    height: auto;
     padding: 20px 0;
     margin-bottom: 0;
     padding-bottom: 0;
+    color: white;
 }
 
 footer .content {
@@ -88,15 +88,3 @@ footer .copyright {
 }
 
 /* ------------------ RESPONSIVIDADE ---------------------- */
-
-@media (max-width: 768px) {
-    footer .menu ul {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    footer .icons {
-        flex-wrap: wrap;
-        gap: 15px;
-    }
-}

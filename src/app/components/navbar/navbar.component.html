@@ -1,10 +1,10 @@
 <nav>
     <mat-toolbar class="mat-elevation-z6">
-        <a class="logo" (click)="GoToHome()">Andersonjuniorz</a>
+        <a class="logo" (click)="goToSection('header')">Andersonjuniorz</a>
 
         <div class="spacer"></div>
 
-        <a mat-button color="color-light-text" (click)="GoToHome()">Home</a>
+        <a mat-button color="color-light-text" (click)="goToSection('header')">Home</a>
         <a mat-button routerLink="/about">Sobre</a>
 
         <button mat-button [matMenuTriggerFor]="serviceMenu">Serviços</button>
@@ -14,6 +14,6 @@
             <button mat-menu-item routerLink="/services/3d">Serviço 3D</button>
         </mat-menu>
         
-        <button mat-button (click)="goToContact()" class="contactLink">Contato</button>
+        <button mat-button (click)="goToSection('contact')" class="contactLink">Contato</button>
     </mat-toolbar>
 </nav>
