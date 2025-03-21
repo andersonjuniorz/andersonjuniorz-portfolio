@@ -12,6 +12,7 @@ export const technologies: { [key: string]: Technology } = {
   Java:       { name: 'Java',       color: '#f00' },
   MySQL:      { name: 'MySQL',      color: '#00f' },
   Unity:      { name: 'Unity',      color: '#00f' },
+  C_Sharp:    { name: 'C#',         color: '#d60f'},
   Unreal:     { name: 'Unreal',     color: '#00f' },
   Blender:    { name: 'Blender',    color: '#00f' },
 };

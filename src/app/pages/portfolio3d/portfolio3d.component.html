@@ -1,24 +1,27 @@
 <main class="mt-150">
 
     <h1 class="text-center">ARTES 3D</h1>
+    
     <p class="description">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta odio nemo deseru consectetur adipisicing elit. Soluta odio nemo deseru consectetur adipisicing elit. Soluta odio nemo deserunt veniam dolorum qui repellendus quos consectetur assumenda cupiditate, optio corporis illum, eum molestiae libero quidem dignissimos ipsam at!
+        Dê vida às suas ideias com modelagem e animação 3D de alta qualidade. De personagens expressivos a cenários impressionantes, crio visuais impactantes que elevam projetos para um novo nível.
     </p>
 
     <section class="projects">
 
-        <mat-card *ngFor="let project of projects" (click)="openProjectDetails(project)">
+        <mat-card *ngFor="let project of projects3d" (click)="openProjectDetails(project)">
             <img src="header-bg.png" alt="header-example">
             
+            <!-- Iterando sobre as tecnologias associadas ao software -->
             <section class="technologies">
-                <app-card-button techName="Unity3D" backgroundColor="#b2b2b2" />
-                <app-card-button techName="C#" backgroundColor="#DD0031" />
-                <app-card-button techName="Blender" backgroundColor="#0f0" />
+                <app-tech-button 
+                    *ngFor="let tech of project.technologies" 
+                    [techName]="tech">
+                </app-tech-button>
             </section>
 
             <section class="card-content">
                 <mat-card-content>{{ project.title }}</mat-card-content>
-                <p>Lorem ipsum dolor si dignissimos modi perspiciatis, illo digniLien eleit the gahe huo ih thue bahye tiit qprie ekee ewweee ssimos modi perspiciatis, illo commod</p>
+                <p>{{ project.text | truncate: 150 }}</p>
             </section>
         </mat-card>
 

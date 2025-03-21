@@ -220,11 +220,12 @@ main {
     height: 500px;
 
     /* Img parallax */
-    background-image: url('/building.jpg');
+    background-image: url('/rio-de-janeiro.jpg');
+    background-position: center center;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center;
+    filter: grayscale(20%);
 }
 
 .quote-content{

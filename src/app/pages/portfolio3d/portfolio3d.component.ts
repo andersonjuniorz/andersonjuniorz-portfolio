@@ -4,21 +4,39 @@ import { CardButtonComponent } from '../../components/card-button/card-button.co
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { ProjectDialogComponent } from '../../components/project-dialog/project-dialog.component';
 import { CommonModule } from '@angular/common';
+import { technologies } from '../../../shared/ technologies';
+import { CardItem } from '../../interfaces/cardItem.interface';
+import { projects3D } from '../../../shared/projects-3d';
+import { TechButtonComponent } from '../../components/tech-button/tech-button.component';
+import { TruncatePipe } from '../../Pipe/truncatePipe';
 
 @Component({
   selector: 'app-portfolio3d',
-  imports: [ CommonModule, MatCardModule, MatDialogModule, CardButtonComponent],
+  imports: [ 
+    CommonModule, 
+    MatCardModule, 
+    MatDialogModule,
+    TechButtonComponent,
+    TruncatePipe
+  ],
   templateUrl: './portfolio3d.component.html',
   styleUrl: './portfolio3d.component.scss'
 })
 export class Portfolio3dComponent {
 
-  projects = [
-    { title: 'Escudo', description: 'Descrição do projeto 1', image: 'header-bg.png', text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur minus magni ab possimus, velit rerum ullam numquam corporis ipsam dolores, tenetLorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur minus magni ab possimus, velit rerum ullam numquam corporis ipsam dolores, tenetur eaque obcaecati iusto tempora. Iste, esse voluptate. Unde, distinctio?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur minus magni ab possimus, velit rerum ullam numquam corporis ipsam dolores, tenetur eaque obcaecati iusto tempora. Iste, esse voluptate. Unde, distinctio?ur eaque obcaecati iusto tempora. Iste, esse voluptate. Unde, distinctio?' },
-    { title: 'Dino', description: 'Descrição do projeto 2', image: 'header-bg.png', text: 'LoreLorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur minus magni ab possimus, velit rerum ullam numquam corporis ipsam dolores, tenetur eaque obcaecati iusto tempora. Iste, esse voluptate. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur minus magni ab possimus, velit rerum ullam numquam corporis ipsam dolores, tenetur eaque obcaecati iusto tempora. Iste, esse voluptate. Unde, distinctio? , distinctio?m ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur minus magni ab possimus, velit rerum ullam numquam corporis ipsam dolores, tenetur eaque obcaecati iusto tempora. Iste, esse voluptate. Unde, distinctio?' }
-  ];
+  technologies = technologies; //Obtendo Dicionario de tecnologias
+
+  /* ---------------- ARRAY DE PROJETOS --------------- */
+
+  projects3d: CardItem[] = projects3D;
+
+
+  /* ------------- CONSTRUCTOR, POP UP CARD ------------- */ 
 
   constructor(private dialog: MatDialog) {}
+
+
+  /* -------------------- METHODS ----------------------- */ 
 
   openProjectDetails(project: any) {
     this.dialog.open(ProjectDialogComponent, {

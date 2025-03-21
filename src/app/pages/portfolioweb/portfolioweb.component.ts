@@ -1,14 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
-import { CardButtonComponent } from '../../components/card-button/card-button.component';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { TruncatePipe } from '../../Pipe/truncatePipe';
 import { ProjectDialogComponent } from '../../components/project-dialog/project-dialog.component'; //Pop up
 import { CardItem } from '../../interfaces/cardItem.interface';
-import { WebProjects } from '../../../shared/webProjects';
+import { projectsWebSoftwares } from '../../../shared/projects-web-softwares';
 import { SoftwareProjects } from '../../../shared/softwares';
-import { Technology } from '../../interfaces/technology.interface';
 import { technologies } from '../../../shared/ technologies';
 import { TechButtonComponent } from '../../components/tech-button/tech-button.component';
 
@@ -35,7 +33,7 @@ export class PortfoliowebComponent {
 
   /* ---------------- ARRAY DE PROJETOS --------------- */
 
-  projects: CardItem[] = WebProjects;
+  projects: CardItem[] = projectsWebSoftwares;
   softwares: CardItem[] = SoftwareProjects;
 
 
@@ -43,6 +41,7 @@ export class PortfoliowebComponent {
 
   constructor(private dialog: MatDialog) {}
 
+  /* -------------------- METHODS ----------------------- */
 
   openProjectDetails(project: any) {
     this.dialog.open(ProjectDialogComponent, {
